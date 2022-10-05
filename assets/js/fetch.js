@@ -44,9 +44,10 @@ const showData = (result) => {
 
 cep.addEventListener("blur", async (e) => {
   let search = cep.value.replace("-", "");
-
-  if (search < 8 || Number(search) === NaN) {
+  console.log(Number(search));
+  if (search < 8 || isNaN(search)) {
     alert("CEP inválido");
+    cep.value = "";
     return;
   }
 
